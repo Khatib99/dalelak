@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DALELAK</title>
+        <link rel="stylesheet" href="css/student.css">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <div class="sidebar">
+                <p> <img class="logo" src="images/logo1.png" alt="logo1"></p>
+                <ul>
+                    <li><a href="/student"><i id="icon" class="material-icons">home</i> Home</a></li>
+                    <li><a href="#"><i id="icon" class="material-icons">quiz</i>My quiz</a></li>
+                    <li><a href="#"><i id="icon" class="material-icons">calendar_month</i>Calendar</a></li>
+                    <li><a href="/saved-videos"><i id="icon" class="material-icons">bookmark</i>Saved videos</a></li>
+                    <li><a href="/books"><i id="icon" class="material-icons">library_books</i>Library</a></li>
+                    <li><a href="/show-meetings"><i id="icon" class="material-icons">meeting_room</i>online meeting</a></li>
+                </ul>
+            </div>
+            <div class="main_content">
+                <div class="header">
+                    <p class="nav-text">My class</p>
+                    <div>
+                        <a href=""> <i id="nav-icon"  class="material-icons">chat_bubble_outline</i></a>
+                        <a href="#"><i id="nav-icon"  class="material-icons">search</i></a>
+                        <a href="#"><i id="nav-icon"  class="material-icons">notifications</i></a>
+                        <a href="#"> <i id="nav-icon"  class="material-icons">account_circle</i></a>
+                    </div>
+                </div>
+                <div class="info">
+                <div class="courses-container">
+                    <% for (var i =0; i < materials.length;  i++ ) { %>
+                        <div class="material-design">
+                            <img class="M-img" src=<%= materials[i].image %> grade=<%= materials[i].grade %> section=<%= section %> material=<%= materials[i].name %> alt=<%= materials[i].name %>>
+                            <div class="description">
+                                <p> <%= materials[i].name %> </p>
+                            </div>
+                        </div>
+                    <% } %>
+            </div>
+            </div>
+            </div>
+        </div>
+        <script>
+            document.querySelectorAll('.material-design').forEach((element) => {
+                element.addEventListener('click', (e) => {
+                        const grade = e.target.getAttribute('grade');
+                        const section = e.target.getAttribute('section');
+                        const material = e.target.getAttribute('material');
+
+                        window.open(`http://localhost:3000/videos?grade=${grade}&section=${section}&material=${material}`, '_self');
+                });
+            });
+        </script>
+    </body>
+</html>

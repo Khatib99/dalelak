@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    background-color: #F8F8F8;
+    overflow-y: hidden;
+}
+.main-container{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-color: white;
+  
+}
+.l-side{
+display: flex;
+flex-direction: column;
+}
+.play-video{
+   width: 800px;
+   margin: 10px;
+   height: 500px;
+}
+.r-side{
+
+    width: 37.09%;
+}
+.r-side-comments{
+    overflow-y: scroll;
+    box-shadow: 0 1px 1px #F8F8F8;
+    height: 400.01px;
+}
+.discussion{
+    height: 10px;
+
+}
+.material-icons{
+   background: none;
+}
+.save-button{
+    background: none;
+    border-radius: 5px;
+    width: 50px; 
+    height: 40px; 
+    border: 0.0rem solid #b3d3ea ; 
+    background-color: skyblue; 
+    color: white; 
+    cursor: pointer; 
+    margin-right: 8px;
+    margin-bottom: 2px;
+}
+.save-button:hover{
+    background-color: #b3d3ea; 
+    color: black; 
+}
+
+.video-name{
+    display: flex;
+    justify-content: space-between;
+}
+.l-side h3{
+    margin: 10px;
+}
+.comments{
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    border: 2px;
+    box-shadow: 0 0.5rem 3rem  #F8F8F8;
+   
+}
+
+.user-data{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer; 
+    margin: 5px;
+}
+.user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: 2px;
+}
+.user-comment{
+
+margin-left: 40px;
+}
+
+.user-comment p {
+    margin-left: -32px;
+}
+.my-comment-div{
+
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.my-comment{
+    outline: none;
+    margin: 10px ;
+    width: 50%;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+.button{
+    border-radius: 5px;
+    width: 30%; 
+    height: 40px; 
+    margin: 10px 6px;
+    border: 0.0rem solid #b3d3ea ; 
+    background-color: skyblue; 
+    color: white; 
+    cursor: pointer; 
+}
+.button:hover{
+    background-color: #b3d3ea; 
+    color: black; 
+}
+
+@media all and (max-width: 480px) {
+    .main-container{
+      flex-direction: column;
+    }
+    .play-video{
+        width: 90%;
+    }
+    .r-side{
+        width: 100%;
+    }
+}

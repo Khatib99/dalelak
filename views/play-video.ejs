@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DALELAK</title>
+	<link rel="stylesheet" href="css/play-video.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="main-container">
+			<div class="l-side" video-id=<%= video.id %>>
+				<iframe  class="play-video"  src=<%= video.url %> title="YouTube video player" frameborder="0"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<div class="video-name">
+					<h3 class="titel">1 video</h3>
+					<button class="save-button"><i id="icon" class="material-icons">bookmark</i></button>
+				</div>
+			</div>
+			<div class="r-side">
+				<h2>Discussion</h2>
+				<div class="r-side-comments">
+					<% for (var i =0; i < comments.length;  i++ ) { %>
+						<div class="comments">
+							<div class="user-data">
+								<p><%= comments[i].user %></p>
+							</div>
+							<div class="user-comment">
+								<p><%= comments[i].content %></p>
+							</div>
+						</div>
+					<% } %>
+				</div>
+					<div class="my-comment-div" name=<%= userID %> >
+						<input type="text" class="my-comment" placeholder="Enter comment" >
+						<button class="button add-comment">Add comment</button>
+					</div>
+			</div>
+	</div>
+	<script>
+		document.querySelector('.save-button').addEventListener('click', () => {
+			const videoId = document.querySelector('.l-side').getAttribute('video-id');
+			const xhr = new XMLHttpRequest();
+			xhr.open("POST", 'http://localhost:3000/save-video');
+
+			xhr.setRequestHeader("Accept", "application/json");
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(`{"videoId": ${videoId}}`);
+		});
+		document.querySelector('.add-comment').addEventListener('click', () => {
+			const comment = document.querySelector('.my-comment').value;
+			if(comment !== '' && !(/^\s*$/gm.test(comment))){
+				document.querySelector('.my-comment').value = '';
+				const username = document.querySelector('.my-comment-div').getAttribute('name');
+				const videoID = document.querySelector('.l-side').getAttribute('video-id')
+				fetch(`http://localhost:3000/insert-comment?username=${username}&comment=${comment}&videoID=${videoID}`);
+				const commentConteiner = document.querySelector('.r-side-comments');
+				const newComment = document.createElement('div');
+				newComment.classList.add('comments');
+
+				const userData = document.createElement('div');
+				userData.classList.add('user-data');
+
+				const para = document.createElement('p');
+				para.innerHTML = username;
+				userData.appendChild(para);
+
+				const userComment = document.createElement('div');
+				userComment.classList.add('user-comment');
+				const contentComment =  document.createElement('p');
+				contentComment.innerHTML = comment;
+				userComment.appendChild(contentComment);
+
+				newComment.appendChild(userData);
+				newComment.appendChild(userComment);
+
+				commentConteiner.appendChild(newComment);
+			}
+			else {
+				window.alert('Empty comments are not allowed');
+				document.querySelector('.my-comment').value = '';
+			}
+
+		});
+	</script>
+</body>
+</html>

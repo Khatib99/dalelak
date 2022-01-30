@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DALELAK</title>
+	<link rel="stylesheet" href="css/list-video.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <p> <img class="logo" src="images/logo1.png" alt="logo1"></p>
+        <ul>
+            <li><a href="/student"><i id="icon" class="material-icons">home</i> Home</a></li>
+            <li><a href="/#"><i id="icon" class="material-icons">quiz</i>My quiz</a></li>
+            <li><a href="#"><i id="icon" class="material-icons">calendar_month</i>Calendar</a></li>
+            <li><a href="/saved-videos"><i id="icon" class="material-icons">bookmark</i>Saved videos</a></li>
+            <li><a href="books"><i id="icon" class="material-icons">library_books</i>Library</a></li>
+        </ul>
+    </div>
+    <div class="main_content">
+        <div class="header">
+            <p class="nav-text">My class</p>
+            <div>
+                <a > <i id="nav-icon"  class="material-icons">chat_bubble_outline</i></a>
+                <a ><i id="nav-icon"  class="material-icons">search</i></a>
+                <a ><i id="nav-icon"  class="material-icons">notifications</i></a>
+                <a > <i id="nav-icon"  class="material-icons">account_circle</i></a>
+            </div>
+        </div>
+        <div class="info">
+          <div class="courses-container">
+            <% for (var i =0; i < videos.length;  i++ ) { %>
+                <div class="material-design" >
+                    <img class="M-img" video-id=<%= videos[i].id %>  src= <%= videos[i].image %> alt=<%= videos[i].material %> >
+                <div class="description">
+                    <p><%= videos[i].name %> - <%= videos[i].material %></p>
+                </div>
+                </div>
+            <% } %>
+    </div>
+      </div>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.material-design').forEach((element) => {
+        element.addEventListener('click', (e) => {
+            window.open(`http://localhost:3000/play-video?videoID=${e.target.getAttribute('video-id')}`, '_self');
+        });
+    });
+</script>
+</body>
+</html>

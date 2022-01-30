@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+body{
+    background-color: #F8F8F8;
+    
+}
+h3{
+    margin-left: 5px;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-color: white;
+    width: 60%;
+   
+}
+.sup-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.name-container{
+    flex-direction: row;
+}
+.grad{
+    outline: none;
+    margin: 10px 0;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+.Section{
+    outline: none;
+    margin: 10px 10px;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+.text-style{
+    outline: none;
+    margin: 8px 0;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+.class-container{
+
+}
+.button-div{
+
+}
+
+.end-button{
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin: 3px 0;
+    border: 0.5px solid #b3d3ea ;
+    background-color: skyblue;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+.end-button:hover{
+        background-color: #b3d3ea; 
+        color: rgb(255, 255, 255); 
+}
+.class-container{
+
+}
+
+.hide{
+    display: none;
+
+}
+.show{
+    display: block;
+
+}
+.student-info{
+    display: flex;
+}
+.material{
+    display: none;
+}
+.material-style{
+    outline: none;
+    margin: 10px 0;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}

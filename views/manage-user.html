@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DALELAK</title>
+    <link rel="stylesheet" href="css/manage-user.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <form class="top-form" action="add-user" method="post">
+            <h3>user type:</h3>
+            <br>
+            <input type="radio" name="type" value="Teacher" class="teacher">teacher
+            <br>
+            <input type="radio" name="type" value="Student" checked  class="student">student
+
+    <div class="sup-container">
+        <h4>Add new user</h4>
+        <a>User name</a>
+        <div class="name-container">
+            <input type="text" name="firstName" placeholder="First name" class="text-style" required>
+            <input type="text" name="lastName" placeholder="Last name" class="text-style" required>
+    </div>
+    <a class="material-or-class">Select the class that you want this student to be in</a>
+    <div class="class-container">
+            <form class="grade-Section">
+                <select name="material"  class="material material-style">
+                    <option value="English">English</option>
+                    <option value="Arabic">Arabic</option>
+                </select>
+                <div class="student-info">
+                <select name="grade"  class="grad">
+                    <option value="1">First grade</option>
+                    <option value="2">Second grade</option>
+                    <option value="3">Third grade</option>
+                    <option value="4">Fourth grade</option>
+                    <option value="5">Fifth grade</option>
+                    <option value="6">Sixth grade</option>
+                    <option value="7">Seventh grade</option>
+                    <option value="8">Eighth grade</option>
+                    <option value="9">Ninth grade</option>
+                    <option value="10">Tenth grade</option>
+                </select>
+                <select name="section"  class="Section">
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+    </div>
+    <a>Email address</a>
+        <input type="text" name="email" placeholder="Email" class="text-style" required>
+    <a>Password</a>
+        <input type="password" name="password" placeholder="Password" class="text-style" required><br>
+    <div class="button-div">
+        <button type='submit' class="end-button" >Save</button>
+        <button type="reset" class="end-button">Reset</button>
+    </div>
+</form>
+</div>
+</div>
+    <script>
+        const teacher=document.querySelector(".teacher");
+        const student=document.querySelector(".student");
+        teacher.addEventListener('change',function() {
+            document.querySelector(".grad").classList.remove("show");
+            document.querySelector(".grad").classList.add("hide");
+            document.querySelector(".Section").classList.remove("show");
+            document.querySelector(".Section").classList.add("hide");
+            document.querySelector(".material-style").classList.remove("material");
+            document.querySelector(".material-style").classList.add("show");
+            document.querySelector('.material-or-class').innerHTML = 'Enter the material to tech';
+        });
+        student.addEventListener('change',function() {
+            document.querySelector(".grad").classList.add("show");
+            document.querySelector(".Section").classList.add("show");
+            document.querySelector(".material-style").classList.remove("show");
+            document.querySelector(".material-style").classList.add("material");
+            document.querySelector('.material-or-class').innerHTML = 'Select the class that you want this student to be in';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+
+}
+.logo{
+  width: 150px;
+  height: 120px;
+  margin-left: 20px;
+}
+#icon{
+  margin-top: 12px;
+  margin-right: 10px;
+}
+#nav-icon{
+  background-color: #FFFFFF;
+  color: black;
+  margin: 10px;
+}
+
+body{
+   background-color: #F8F8F8;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 100%;
+  background: #FFFFFF;
+  padding: 30px 0px;
+  position: fixed;
+}
+
+
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a{
+  color: #000000;
+  display: block;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #b3d3ea;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  background: #F8F8F8;
+  color: #000000;
+  position:fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  font-size: 26px;
+}
+.nav-icon{
+  width: 40px;
+  height: 30px;
+}
+
+.wrapper .main_content .info{
+  margin: 20px;
+  color: #000000;
+  line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+.courses-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 30px;
+  background-color: #F8F8F8;
+
+
+}
+.M-img{
+  width: 150px;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:10px ;
+}
+.material-design{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  background-color: #FFFFFF;
+  outline: none;
+  margin: 30px 40px 30px 50px;
+  border-radius: 10px;
+}
+.description{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 10px;
+}

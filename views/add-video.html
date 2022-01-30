@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DALELAK</title>
+	<link rel="stylesheet" href="css/add-video.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="l-side">
+            <div class="back">
+                <a href="/teacher"><button class="back-button"><i id="icon" class="material-icons">arrow_back</i></button></a>
+            </div>
+        </div>
+        <div class="m-side">
+
+            <div class="m-main-container">
+                    <form class="top-form" action="add-video" method="post">
+                <div class="sup-container">
+                    <h4>Add new video</h4>
+                    <a>video-name</a>
+                    <div class="name-container">
+                        <input type="text" name="name" placeholder="video-name" class="text-style" required> 
+                    </div>
+                <a class="material-or-class">Select the class that you want this student to be in</a>
+                <div class="class-container">
+                        <form class="grade-Section">
+                            <div class="student-info">
+                            <select name="grade"  class="grad">
+                                <option value="1">First grade</option>
+                                <option value="2">Second grade</option>
+                                <option value="3">Third grade</option>
+                                <option value="4">Fourth grade</option>
+                                <option value="5">Fifth grade</option>
+                                <option value="6">Sixth grade</option>
+                                <option value="7">Seventh grade</option>
+                                <option value="8">Eighth grade</option>
+                                <option value="9">Ninth grade</option>
+                                <option value="10">Tenth grade</option>
+                            </select>
+                            <select name="section"  class="Section">
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </select>
+                        </div>
+                </div>
+                <a>Video url</a>
+                    <input type="text" name="url" placeholder="video url" class="text-style" required>
+                <a>Img url</a>
+                    <input type="text" name="image" placeholder="img url" class="text-style" required><br>
+                    <a>Material</a>
+                    <input type="text" name="material" class="text-style" value=${material} readonly><br>
+                <div class="button-div">
+                    <button type='submit' class="end-button" >Save</button>
+                    <button type="reset" class="end-button">Reset</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>

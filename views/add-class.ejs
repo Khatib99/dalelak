@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DALELAK</title>
+	<link rel="stylesheet" href="css/add-class.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+	<form class="grade-Section" action="add-class" method="post">
+
+	<div class="main-container">
+
+		<% if (exist){ %>
+			<script>window.alert('Can\'t create a class that is already exist .!!')</script>
+		<% } %>
+    <div class="sup-container">
+		<a class="home-button" href="/admin"><button class="end-button">Home</button></a>
+		<h1>Add new class</h1>
+		<h3>Select class & Section</h3>
+	<div class="class-container">
+		<select name="grade" id="grade" class="grad">
+			<option value="" selected disabled hidden>Choose Grade</option>
+			<option value="1">first grade</option>
+			<option value="2">second grade</option>
+			<option value="3">third grade</option>
+			<option value="4">fourth grade</option>
+			<option value="5">fifth grade</option>
+			<option value="6">sixth grade</option>
+			<option value="7">seventh grade</option>
+			<option value="8">eighth grade</option>
+			<option value="9">ninth grade</option>
+			<option value="10">tenth grade</option>
+		  </select>
+		  <select name="section" class="min-text-style">
+			<option value="A">A</option>
+			<option value="B">B</option>
+			<option value="C">C</option>
+			<option value="D">D</option>
+		  </select>
+	</div>
+	<h3>Student num</h3>
+	<input type="number" name="number-student" value="15" min="15" max="35" class="min-text-style">
+	<h3>Set teachers</h3>
+	<div class="materials-container">
+	</div>
+		<div class="button-div">
+			<button class="end-button button-disabled" id="submit" type="submit">Save</button>
+			<button class="end-button" type="reset">Reset</button>
+		</div>
+
+</div>
+</div>
+</form>
+
+<script>
+	document.querySelector('#grade').addEventListener('change', (e) => {
+		const userAction = async () => {
+			const container = document.querySelector('.materials-container');
+			container.innerHTML = '';
+			const response = await fetch(`http://localhost:3000/search-teachers-per-grade?grade=${e.target.value}`);
+			const myJson = await response.json();
+			myJson.forEach(element => {
+			document.querySelector('[type=submit]').classList.remove('button-disabled');
+					const material = document.createElement('div');
+					material.classList.add('material');
+					const spanName =  document.createElement('span');
+					spanName.classList.add('material-name');
+					spanName.innerHTML = element.material;
+					material.appendChild(spanName);
+
+					const select = document.createElement('select');
+					select.classList.add('grad');
+					select.setAttribute('name', `${element.material}-teacher`);
+
+					if(element.teachers.length) {
+						element.teachers.forEach((teacher) => {
+							const option = document.createElement("option");
+							const text = document.createTextNode(teacher.name);
+							option.setAttribute('value', teacher.username);
+							option.appendChild(text);
+							select.appendChild(option);
+						});
+					}
+					else {
+						const option = document.createElement("option");
+						const text = document.createTextNode('No available teacher');
+						option.appendChild(text);
+						select.appendChild(option);
+					}
+					material.appendChild(select);
+					container.appendChild(material);
+			});
+		}
+		userAction();
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+    background-color: #F8F8F8;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    background-color: white;
+    width: 50%;
+}
+
+.sup-container{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.name-container{
+    flex-direction: row;
+}
+
+.grad{
+    outline: none;
+    margin: 10px 0;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.Section{
+    outline: none;
+    margin: 10px 0;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.text-style{
+    outline: none;
+    margin: 8px 0;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.min-text-style{
+    outline: none;
+    margin: 8px 0;
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.button-div{
+    display: flex;
+    justify-content: space-around;
+}
+
+.end-button{
+    border-radius: 10px;
+    width: 150px;
+    height: 40px;
+    margin: 3px 0;
+    border: 0.5px solid #b3d3ea ;
+    background-color: skyblue;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.end-button:hover{
+    background-color: #b3d3ea;
+    color: rgb(255, 255, 255);
+}
+
+.add-button{
+    border-radius: 50%;
+    background-color: skyblue;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.add-button:hover{
+    background-color: #b3d3ea;
+    color: rgb(255, 255, 255);
+}
+
+.material {
+    display: flex;
+    /* justify-content: space-evenly; */
+}
+
+.material-name {
+    margin: 20px 100px;
+}
+
+.button-disabled{
+    pointer-events: none;
+}
+
+.home-button{
+    margin: 0 auto;
+}

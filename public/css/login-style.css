@@ -1,0 +1,189 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.Wrapper{
+    position: relative;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.LeftContainer{
+    position: relative;
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.RightContainer{
+    position: relative;
+    display: inline-block;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    background-image: url('../images/login.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.LeftNavBar{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.Logo{
+    position: relative;
+    display: inline-block;
+    margin: 1rem;
+    width:110px;
+    height: 75px;
+    margin-top:-5px;
+}
+
+
+.Navbar-List{
+    position: relative;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.nav-item{
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.nav-item:hover{
+    color: #b3d3ea;
+}
+
+.Login-Container{
+    margin: 200px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    outline: none;
+    margin: 10px 0;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    border: 0.5px solid #b3d3ea ;
+}
+
+.checkbox-container {
+    display: flex;
+    align-self: flex-start;
+}
+
+p {
+    margin-left: 5px;
+    font-size: 12px;
+}
+.form1{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.sign-button {
+    border-radius: 10px;
+    width: 300px;
+    height: 40px;
+    margin: 35px 0;
+    border: 0.5px solid #b3d3ea ;
+    background-color: skyblue;
+    color: white;
+    cursor: pointer;
+}
+.sign-button:hover{
+    background-color: #b3d3ea;
+    color: black;
+}
+
+.forgot {
+    cursor: pointer;
+    color: skyblue;
+}
+.forgot:hover{
+  color: #b3d3ea;
+
+}
+
+.Login-Info{
+    height: 5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Sign-Button{
+    position: relative;
+    display: inline-block;
+    height: 1.5rem;
+    width: 4rem;
+}
+.Checkbox-Container{
+    height: 5rem;
+    width: 15rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.div1{
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.div2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+.Sign-Button {
+    border-radius: 10%;
+    width: 10rem; 
+    height: 2rem; 
+    margin: 0.2rem 0rem;
+    border: 0.2rem solid #b3d3ea ; 
+    background-color: skyblue; 
+    color: white; 
+    cursor: pointer; 
+} 
+
+.Sign-Button:hover{    
+    background-color: #b3d3ea; 
+    color: black; 
+}
+@media screen and (max-width:480px) {
+    .RightContainer {
+        display: none;
+    }
+
+    .LeftContainer {
+        width: 100%;
+    }
+
+    .form1 {
+        margin-top: 40px;
+    }
+}
