@@ -3,8 +3,7 @@ const es6Renderer = require('express-es6-template-engine');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const dbQueries  = require('./dataBaseActions/queries.js');
-const cypress = require('cypress');
-//const res = require('express/lib/response');
+
 const app = express();
 
 const port = process.env.port || 3000;
