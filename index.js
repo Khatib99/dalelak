@@ -3,8 +3,9 @@ const es6Renderer = require('express-es6-template-engine');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const dbQueries  = require('./dataBaseActions/queries.js');
-// const res = require('express/lib/response');
-app = express();
+const cypress = require('cypress');
+//const res = require('express/lib/response');
+const app = express();
 
 const port = process.env.port || 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -51,13 +52,13 @@ app.post('/add-user', async (req, res) => {
 
             if(data.type === 'Teacher') {
                 insertObject.material = [data.material];
-                insertObject.savedVideos = [];
                 dbQueries.addUser(insertObject);
             }
             else if (data.type === 'Student') {
                 insertObject.grade = data.grade;
                 insertObject.section = data.section;
-                const existClass = await dbQueries.findClass(grade, section);
+                insertObject.savedVideos = [];
+                const existClass = await dbQueries.findClass(insertObject.grade, insertObject.section);
                 if(existClass.length){
                     const isChecked = await dbQueries.checkClass(insertObject.grade, insertObject.section);
                 if(isChecked) {
@@ -312,6 +313,18 @@ app.post('/add-meeting', async (req, res) => {
 
 app.get('/add-quiz', (req, res) => {
     res.render('add-quiz');
+});
+
+app.get('/calender', () => {
+    if(req.session.isStudentLogIn) {
+        res.render('calender.html');
+    } else res.redirect('/');
+});
+
+app.get('/quiz', () => {
+    if(req.session.isStudentLogIn) {
+        res.render('quiz.html');
+    } else res.redirect('/');
 });
 
 app.listen(port, () => {

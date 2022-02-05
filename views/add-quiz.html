@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/add-quiz.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <img src="https://cdn.discordapp.com/attachments/748268831683641465/935192293277847622/logo-.png" class="logo">
+    </div>
+    <div class="type-container">
+        <span class="type-headline">Choose Type:</span>
+        <div class="type-wrapper">
+            <input type="radio" name="template" checked class="quiz">Quiz
+            <input type="radio" name="template" class="assignment">Assignment
+        </div>
+    </div>
+    <div class="template-body">
+        <div class="a-template">
+            <input type="text" class="quiz-answer" name="A1" placeholder="Enter assignment's headline here...">
+            <input type="text" class="quiz-input" name="Q1" placeholder="Enter descreption here...">
+        </div>
+        <div class="q-template">
+            <span>Enter your questions</span>
+            <button class="btn-1">Add question</button>
+            <h3 class="q-num"> Question 1</h3>
+            <input type="text" class="quiz-input" name="Q1" placeholder="Enter Question here...">
+            <input type="text" class="quiz-answer" name="A1" placeholder="Enter Answer here...">
+        </div>
+        <button id="btn-1" class="btn-1">Submit Questions</button>
+    </div>
+    <script>
+        const wrapper = document.querySelector('.q-template');
+        const aWrapper = document.querySelector('.a-template');
+        const btn = document.querySelector('.btn-1');
+        const assignment = document.querySelector('.assignment');
+        const quiz = document.querySelector('.quiz');
+        const submit = document.getElementById('btn-1');
+
+        let count = 2;
+
+        btn.addEventListener("click", (event) => {
+            const question = document.createElement("input");
+            const answer = document.createElement("input");
+            const name = document.createElement("h3");
+
+            question.classList.add("quiz-input");
+            question.setAttribute("placeholder", "Enter Question here...");
+            question.setAttribute("name", `Q${count}`);
+            answer.classList.add("quiz-answer");
+            answer.setAttribute("placeholder", "Enter Answer here...");
+            answer.setAttribute("name", `A${count}`);
+            name.classList.add("q-num");
+            name.innerHTML = `Question ${count}`;
+
+            wrapper.appendChild(name);
+            wrapper.appendChild(question);
+            wrapper.appendChild(answer);
+            count++;
+        });
+
+        quiz.addEventListener("click", (event) => {
+            wrapper.style.display = "flex";
+            aWrapper.style.display= "none";
+            submit.innerText = "Submit Questions";
+        });
+
+        assignment.addEventListener("click", (event) => {
+            wrapper.style.display = "none";
+            submit.innerText = "Submit Assignment";
+            aWrapper.style.display="flex";
+            aWrapper.classList.add("show");
+        });
+
+
+    </script>
+</body>
+</html>
