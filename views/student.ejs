@@ -15,8 +15,8 @@
                 <p> <img class="logo" src="images/logo1.png" alt="logo1"></p>
                 <ul>
                     <li><a href="/student"><i id="icon" class="material-icons">home</i> Home</a></li>
-                    <li><a href="#"><i id="icon" class="material-icons">quiz</i>My quiz</a></li>
-                    <li><a href="#"><i id="icon" class="material-icons">calendar_month</i>Calendar</a></li>
+                    <li><a href="/quiz"><i id="icon" class="material-icons">quiz</i>My quiz</a></li>
+                    <li><a href="/calender"><i id="icon" class="material-icons">calendar_month</i>Calendar</a></li>
                     <li><a href="/saved-videos"><i id="icon" class="material-icons">bookmark</i>Saved videos</a></li>
                     <li><a href="/books"><i id="icon" class="material-icons">library_books</i>Library</a></li>
                     <li><a href="/show-meetings"><i id="icon" class="material-icons">meeting_room</i>online meeting</a></li>
@@ -53,7 +53,7 @@
                         const section = e.target.getAttribute('section');
                         const material = e.target.getAttribute('material');
 
-                        window.open(`/videos?grade=${grade}&section=${section}&material=${material}`, '_self');
+                        window.open(`http://localhost:3000/videos?grade=${grade}&section=${section}&material=${material}`, '_self');
                 });
             });
         </script>

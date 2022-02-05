@@ -48,7 +48,7 @@
 <script>
     document.querySelectorAll('.material-design').forEach((element) => {
         element.addEventListener('click', (e) => {
-            window.open(`/play-video?videoID=${e.target.getAttribute('video-id')}`, '_self');
+            window.open(`http://localhost:3000/play-video?videoID=${e.target.getAttribute('video-id')}`, '_self');
         });
     });
 </script>

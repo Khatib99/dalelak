@@ -49,12 +49,12 @@
 
             question.classList.add("quiz-input");
             question.setAttribute("placeholder", "Enter Question here...");
-            question.setAttribute("name", `Q${count}`);
+            question.setAttribute("name", 'Q'+count);
             answer.classList.add("quiz-answer");
             answer.setAttribute("placeholder", "Enter Answer here...");
-            answer.setAttribute("name", `A${count}`);
+            answer.setAttribute("name", 'A'+count);
             name.classList.add("q-num");
-            name.innerHTML = `Question ${count}`;
+            name.innerHTML = 'Question'+count;
 
             wrapper.appendChild(name);
             wrapper.appendChild(question);

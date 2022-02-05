@@ -7,6 +7,7 @@ const dbQueries  = require('./dataBaseActions/queries.js');
 const app = express();
 
 const port = process.env.port || 3000;
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
@@ -15,7 +16,6 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
-
 app.engine('html', es6Renderer);
 
 app.set('views', 'views');
@@ -233,7 +233,7 @@ app.get('/add-video', (req, res) => {
 
 app.post('/add-video', async (req, res) => {
     if (req.session.isTeacherLogIn) {
-   const lastId = await dbQueries.findLastInsertedIdVideo();
+    const lastId = await dbQueries.findLastInsertedIdVideo();
     const obj  = {};
     const body = req.body;
     for (const property in body) {
@@ -311,16 +311,16 @@ app.post('/add-meeting', async (req, res) => {
 });
 
 app.get('/add-quiz', (req, res) => {
-    res.render('add-quiz');
+    res.render('add-quiz.html');
 });
 
-app.get('/calender', () => {
+app.get('/calender', (req,res) => {
     if(req.session.isStudentLogIn) {
         res.render('calender.html');
     } else res.redirect('/');
 });
 
-app.get('/quiz', () => {
+app.get('/quiz', (req,res) => {
     if(req.session.isStudentLogIn) {
         res.render('quiz.html');
     } else res.redirect('/');

@@ -47,7 +47,7 @@
 	<div class="materials-container">
 	</div>
 		<div class="button-div">
-			<button class="end-button button-disabled" id="submit" type="submit">Save</button>
+			<button class="end-button button" id="submit" type="submit">Save</button>
 			<button class="end-button" type="reset">Reset</button>
 		</div>
 
@@ -56,11 +56,11 @@
 </form>
 
 <script>
-	document.querySelector('#grade').addEventListener('change', (e) => {
+	document.getElementById('grade').addEventListener('change', (e) => {
 		const userAction = async () => {
 			const container = document.querySelector('.materials-container');
 			container.innerHTML = '';
-			const response = await fetch(`/search-teachers-per-grade?grade=${e.target.value}`);
+			const response = await fetch(`http://localhost:3000/search-teachers-per-grade?grade=${e.target.value}`);
 			const myJson = await response.json();
 			myJson.forEach(element => {
 			document.querySelector('[type=submit]').classList.remove('button-disabled');
