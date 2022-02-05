@@ -60,7 +60,7 @@
 		const userAction = async () => {
 			const container = document.querySelector('.materials-container');
 			container.innerHTML = '';
-			const response = await fetch(`http://localhost:3000/search-teachers-per-grade?grade=${e.target.value}`);
+			const response = await fetch(`/search-teachers-per-grade?grade=${e.target.value}`);
 			const myJson = await response.json();
 			myJson.forEach(element => {
 			document.querySelector('[type=submit]').classList.remove('button-disabled');
